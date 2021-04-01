@@ -3,8 +3,6 @@ Bot to answer all leftist words in chat
 """
 
 import telebot
-import time
-import json
 import datetime
 
 bot_token = "<TOKEN>"
@@ -13,25 +11,16 @@ bot_name = '@antifaActionBot'
 
 bot.can_join_groups = True
 bot.can_read_all_group_message = True
+@bot.message_handler(commands=['start'])
+def send_start(message):
+    bot.reply_to(message,"Hallo!")
 
-def json_write(datta,filename='Chats.json'):
-    with open(filename, "w") as f:
-        json.dump(datta, f, indent=2)
-
-@bot.message_handler(func=lambda m:True)
-def get_chats(message):
-    with open('Chats.json') as f:
-        chats = json.load(f)
-    chat = message.chat.id
-    if chat not in chats["Chats"]:
-        chats["Chats"].append(chat)
-
-@bot.message_handler(func=lambda m:True)
+@bot.message_handler(func=lambda message: True)
 def say_something(message):
-    message.text.lower()
     text = message.text.split()
     chat = message.chat.id
     for i in text:
+        i = i.lower()
         if i == "antifa":
             bot.send_message(chat,"Antifaaaaaaaaaa <3")
         elif i == "kommunismus":
@@ -74,16 +63,10 @@ def say_something(message):
             bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT")
         elif i == "13120":
             bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT")
-
-def send_acab():
-    with open('Chats.json') as f:
-        chats = json.load(f)
-    if time.ctime()[-13:-8] == "13:12":
-        for i in chats["Chats"]:
-            try:
-                bot.send_message(i, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT")
-            except Exception as e:
-                print(e)
+        elif i == "cops":
+            bot.send_message(chat,"FCKCPS!")
+        elif i == "kapitalismus":
+            bot.send_message(chat,"Fight Capitalism!")
 
 while True:
     try:
