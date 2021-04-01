@@ -5,7 +5,7 @@ Bot to answer all leftist words in chat
 import telebot
 import datetime
 
-bot_token = "1703408507:AAHKvrd5l3Y94R0Gt3JoNgfKOrrne-kslVg"
+bot_token = "<TOKEN>"
 bot = telebot.TeleBot(bot_token)
 bot_name = '@antifaActionBot'
 
@@ -36,7 +36,7 @@ def say_something(message):
         bot.send_message(chat,"Daddy <3")
     elif "stalin" in text:
         bot.send_message(chat,"Verräter! 😤😡")
-    elif "nazi" in text or "fascho" in text:
+    elif "nazi" in text or "fascho" in text or "die rechte" in text:
         bot.send_message(chat, "Nazis Töten. 🤬😡")
     elif "spd" in text or "grüne" in text:
         bot.send_message(chat,"Wer hat uns verraten? 😤😡")
@@ -48,6 +48,8 @@ def say_something(message):
         bot.send_message(chat,"Karl Marx <3")
     elif "revolution" in text:
         bot.send_message(chat,"What solution? Reeeevoluution ✊")
+    elif "patriot" in text:
+        bot.send_message(chat,"Patridiot*innen!")
 
 while True:
     try:
