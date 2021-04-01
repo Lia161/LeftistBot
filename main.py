@@ -37,7 +37,7 @@ def say_something(message):
         elif i == "engels":
             bot.send_message(chat,"<3")
         elif i == "stalin":
-            bot.send_message(chat,"Verräter!")
+            bot.send_message(chat,"Verräter! 😤😡")
         elif i == "manifest":
             bot.send_message(chat,"<3")
         elif i == "trotzki":
@@ -51,23 +51,23 @@ def say_something(message):
         elif i == "links":
             bot.send_message(chat,"Revolution?")
         elif i == "spd" or i == "grüne":
-            bot.send_message(chat,"Wer hat uns verraten?")
+            bot.send_message(chat,"Wer hat uns verraten? 😤😡")
         elif i == "il":
             bot.send_message(chat,"<3")
         elif i == "fascho" or i == "faschos":
-            bot.send_message(chat,"Nazis Töten.")
+            bot.send_message(chat,"Nazis Töten. 🤬😡")
         elif i == "nazi" or i == "nazis":
-            bot.send_message(chat, "Nazis Töten.")
+            bot.send_message(chat, "Nazis Töten. 🤬😡")
         elif i == "acab":
-            bot.send_message(chat,"HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT")
+            bot.send_message(chat,"HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT 🤬😡")
         elif i == "acat":
-            bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT")
+            bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT 🤬😡")
         elif i == "1312":
-            bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT")
+            bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT 🤬😡")
         elif i == "13120":
-            bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT")
+            bot.send_message(chat, "HASS, HASS, HASS WIE NOCH NIE! ALL COPS ARE TARGETS ACAT 🤬😡")
         elif i == "cops" or i == "cop":
-            bot.send_message(chat,"FCKCPS!")
+            bot.send_message(chat,"FCKCPS! 🤬😡")
         elif i == "kapitalismus":
             bot.send_message(chat,"Fight Capitalism!")
         elif i == "lenin":
