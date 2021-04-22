@@ -3,7 +3,7 @@ Bot to answer all leftist words in chat
 """
 
 import telebot
-import datetime
+from datetime import datetime
 
 bot_token = "<TOKEN>"
 bot = telebot.TeleBot(bot_token)
@@ -11,6 +11,18 @@ bot_name = '@antifaActionBot'
 
 bot.can_join_groups = True
 bot.can_read_all_group_message = True
+
+def replace_all(text):
+    text = text.replace(",", "")
+    text = text.replace(".", "")
+    text = text.replace(";", "")
+    text = text.replace(":", "")
+    text = text.replace("-", "")
+    text = text.replace(")", "")
+    text = text.replace("*", "")
+    text = text.replace("*", "")
+    text = text.replace("!","")
+    return text
 
 @bot.message_handler(commands=['start'])
 def send_start(message):
@@ -20,9 +32,17 @@ def send_start(message):
 def say_something(message):
     chat = message.chat.id
     text = message.text.lower()
+    text = replace_all(text)
+    date = str(datetime.now())[5:10]
+    for i in text.split():
+        if i == "il":
+            bot.send_message(chat,"<3")
+            break
     if "antifa" in text:
         bot.send_message(chat,"Antifaaaaaaaaaa <3")
-    elif "left unity" in text or "kommunismus" in text or "luxemburg" in text or "anarchismus" in text or "anarchie" in text or "engels" in text or "manifest" in text or "trotzki" in text or "kropotkin" in text or "bakunin" in text or "il" in text or "pkk" in text or "kpd" in text:
+    elif "theorie" in text:
+        bot.send_message(chat,"Theorie und Praxis ...")
+    elif "left unity" in text or "enteignen" in text or "enteignung" in text or "kommunismus" in text or "luxemburg" in text or "anarchismus" in text or "anarchie" in text or "engels" in text or "manifest" in text or "trotzki" in text or "kropotkin" in text or "bakunin" in text or "pkk" in text or "kpd" in text:
         bot.send_message(chat, "<3")
     elif "kapitalismus" in text or "capitalism" in text:
         bot.send_message(chat,"Fight Capitalism!")
@@ -45,7 +65,10 @@ def say_something(message):
     elif "rechts" in text:
         bot.send_message(chat,"Keinen Millimeter nach rechts!")
     elif "marx" in text:
-        bot.send_message(chat,"Karl Marx <3")
+        if date != "05-05":
+            bot.send_message(chat,"Karl Marx <3")
+        else:
+            bot.send_message(chat,"HAPPY BIRTHDAY MARX <3")
     elif "revolution" in text:
         bot.send_message(chat,"What solution? Reeeevoluution ✊")
     elif "patriot" in text:
@@ -54,6 +77,6 @@ def say_something(message):
 while True:
     try:
         bot.polling()
-        print(f"Start Polling ...      {datetime.datetime.now()}")
+        print(f"Start Polling ...      {datetime.now()}")
     except Exception as e:
-        print(f"{e}      {datetime.datetime.now()}")
+        print(f"{e}      {datetime.now()}")
