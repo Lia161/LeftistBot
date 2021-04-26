@@ -34,10 +34,6 @@ def say_something(message):
     text = message.text.lower()
     text = replace_all(text)
     date = str(datetime.now())[5:10]
-    for i in text.split():
-        if i == "il":
-            bot.send_message(chat,"<3")
-            break
     if "antifa" in text:
         bot.send_message(chat,"Antifaaaaaaaaaa <3")
     elif "theorie" in text:
@@ -73,6 +69,11 @@ def say_something(message):
         bot.send_message(chat,"What solution? Reeeevoluution ✊")
     elif "patriot" in text:
         bot.send_message(chat,"Patridiot*innen!")
+    else:
+        for i in text.split():
+            if i == "il":
+                bot.send_message(chat, "<3")
+                break
 
 while True:
     try:
